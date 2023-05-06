@@ -1,15 +1,12 @@
 ---
 const links = {
   twitter: "/",
-  facebook: "/",
-  instagram: "/",
+  facebook: "",
+  instagram: "",
 };
 ---
 
-<nav
-  aria-roledescription="Social Media Links"
-  role="navigation"
-  aria-label="Social Media Links Navigation">
+<nav aria-roledescription="Social Media Links" role="navigation" aria-label="Social Media Links Navigation">
   {
     Object.entries(links).map(([socialMedia, link]) => {
       return (
@@ -25,9 +22,7 @@ const links = {
 
 <style>
   nav {
-    display: flex;
-    justify-content: end;
-    padding-bottom: 2rem;
+    padding: 1rem;
   }
 
   nav a {
@@ -35,6 +30,7 @@ const links = {
   }
 
   nav a img {
-    width: 2rem;
+    width: 3rem;
+    height: 3rem;
   }
 </style>

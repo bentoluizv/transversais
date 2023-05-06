@@ -2,24 +2,27 @@
 ---
 
 <nav role="navigation" aria-label="links de navegação">
-  <a title="sobre" href="/">sobre o autor</a>
+  <a title="sobre" href="/sobre">sobre o autor</a>
   <a title="sumario" href="/">sumário</a>
 </nav>
 
 <style>
   nav {
-    display: flex;
-    justify-content: center;
-    padding-bottom: 2rem;
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 1rem;
   }
 
   nav a {
     margin: 0 1rem;
-    padding: 0.5rem 0.8rem;
-    background: #c8c4c4;
-    border: solid 0rem #c6b7b7;
+    padding: 0.5rem 1rem 0.8rem 1rem;
+    text-align: center;
+    background: #555555;
+    color: #c4bd99;
+    border: solid 0rem #ffffff;
     border-radius: 0.3rem;
-    box-shadow: 0.5rem 0.5rem 0px #3c3c3c;
+    box-shadow: 0.5rem 0.5rem 0px #000000;
+    padding-bottom: 1rem;
   }
 
   nav a:hover {
