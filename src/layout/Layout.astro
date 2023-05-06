@@ -1,0 +1,97 @@
+---
+import Header from "../components/Header/Header.astro";
+
+type Props = {
+  title?: string;
+};
+
+const { title = "transversais" } = Astro.props;
+---
+
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content="Transversais: livro de poesias do autor paraense Adriano Abbade." />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="container">
+      <Header />
+      <aside title="barra de navegação lateral esquerda" class="left-sidebar"></aside>
+      <main>
+        <slot />
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta libero vero officia ab iure architecto dolorem. Distinctio qui nobis ullam,
+          vero natus quam assumenda quidem autem eligendi alias possimus accusantium. Est qui alias expedita iusto, ea recusandae. Incidunt, labore,
+          esse iusto a voluptates ipsam fugiat nulla est suscipit aut eos adipisci cupiditate reiciendis quaerat sit ex expedita sint repellat libero?
+          Dolorum iusto, placeat, magnam quis dolore, architecto tempora animi repellendus facilis quo cumque tenetur laudantium delectus. Hic, quos
+          accusantium eius pariatur iste nihil, nostrum delectus porro ea obcaecati, eveniet vel? Nobis modi quo hic quae vel sapiente commodi
+          molestias ducimus dolore expedita ea incidunt, sit consequuntur sunt similique perspiciatis deserunt nihil numquam impedit nulla! Autem odit
+          blanditiis cupiditate ullam eveniet! Porro beatae dignissimos odio architecto voluptatem pariatur excepturi animi, veniam voluptate at,
+          temporibus tenetur perferendis quae, vero consequuntur corporis corrupti numquam recusandae qui. Temporibus accusantium, sequi quaerat
+          voluptate aspernatur excepturi! Dolorem consequatur accusantium commodi debitis quibusdam ducimus sit doloremque? Quaerat nemo esse
+          assumenda quidem consequatur hic, non vero ratione totam iste voluptate facere dolorem quasi voluptatibus natus quia odio perferendis. Saepe
+          cupiditate amet, voluptas eligendi dolorum iusto dignissimos nesciunt quia earum aliquid enim impedit ad quibusdam sed vitae repudiandae
+          velit unde vel tempore ex quisquam sapiente quae alias mollitia. Eum! Et deleniti consectetur eos atque omnis reiciendis nesciunt architecto
+          accusamus, dolores alias at dignissimos eius, nihil facilis voluptate earum aliquam dolor iste suscipit! Eaque consectetur dolorum
+          necessitatibus, nesciunt temporibus fugit! Ipsum excepturi est quo et itaque delectus saepe temporibus explicabo illo. Modi, illum libero.
+          Repudiandae, consequuntur ducimus. Ut delectus hic eos saepe officia accusantium, eius nihil ipsa magnam, corporis voluptas? Ea vitae fugiat
+          repudiandae numquam adipisci quisquam accusantium magni placeat dolores deserunt et totam omnis, perspiciatis, non sed. Recusandae ea
+          debitis consequatur nam, laboriosam incidunt corporis optio omnis odit vel.
+        </p>
+      </main>
+      <aside title="barra de navegação lateral direita" class="right-sidebar"></aside>
+      <footer>Adriano Abbade - Todos os direitos reservados - 2023</footer>
+    </div>
+  </body>
+</html>
+
+<style is:global>
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    color: #393737;
+    background: #f5eeee;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  main {
+    grid-row: 2;
+    margin-top: 12rem;
+    padding: 1rem;
+  }
+
+  .left-sidebar,
+  .right-sidebar {
+    display: none;
+  }
+
+  .container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-width: 100vw;
+    height: 100vh;
+  }
+  footer {
+    grid-row: 3;
+    max-height: 20vh;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.7rem;
+    color: #3eeb1b;
+    background: #2b2929;
+  }
+</style>
