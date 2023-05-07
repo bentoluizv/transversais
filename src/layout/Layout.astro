@@ -1,27 +1,70 @@
 ---
 import Footer from "../components/Footer/Footer.astro";
 import Header from "../components/Header/Header.astro";
+
+type Props = {
+  title?: string;
+};
+
+const { title = "transversais" } = Astro.props;
 ---
 
-<!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="transversais: livro de poesias do autor paraense adriano abbade" />
-    <title>transversais</title>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content="Transversais: livro de poesias do autor paraense Adriano Abbade." />
+    <title>{title}</title>
   </head>
   <body>
-    <Header />
-
-    <slot />
-
-    <Footer />
+    <div class="container">
+      <Header />
+      <aside title="barra de navegação lateral esquerda" class="left-sidebar"></aside>
+      <main>
+        <slot />
+      </main>
+      <aside title="barra de navegação lateral direita" class="right-sidebar"></aside>
+      <Footer />
+    </div>
   </body>
 </html>
 
 <style is:global>
-  @import "../styles/reset.css";
-  @import "../styles/fonts.css";
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    color: #524c4c;
+    background: #ffffff;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  main {
+    grid-row: 2;
+    display: grid;
+    gap: 3rem;
+  }
+
+  .left-sidebar,
+  .right-sidebar {
+    display: none;
+  }
+
+  .container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-width: 100vw;
+    height: 100vh;
+  }
 </style>

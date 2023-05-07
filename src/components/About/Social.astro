@@ -1,0 +1,36 @@
+---
+const links = {
+  twitter: "/",
+  facebook: "",
+  instagram: "",
+};
+---
+
+<nav aria-roledescription="Social Media Links" role="navigation" aria-label="Social Media Links Navigation">
+  {
+    Object.entries(links).map(([socialMedia, link]) => {
+      return (
+        link && (
+          <a href={link}>
+            <img src={`/icons/${socialMedia}.png`} alt="social media icons" />
+          </a>
+        )
+      );
+    })
+  }
+</nav>
+
+<style>
+  nav {
+    padding: 1rem;
+  }
+
+  nav a {
+    padding: 0 0.3rem;
+  }
+
+  nav a img {
+    width: 3rem;
+    height: 3rem;
+  }
+</style>

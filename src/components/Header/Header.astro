@@ -1,5 +1,17 @@
 ---
-import "./header.css";
+import Title from "./Title.astro";
+import BookNav from "./BookNav.astro";
 ---
 
-<header></header>
+<header>
+  <Title />
+  <BookNav />
+</header>
+
+<style>
+  header {
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+  }
+</style>
