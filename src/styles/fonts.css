@@ -1,0 +1,9 @@
+@font-face {
+  font-family: AmericanTypeWritterRegular;
+  src: url("./fonts/america-typewritter-regular.ttf");
+}
+
+@font-face {
+  font-family: AmericanTypeWritterLight;
+  src: url("./fonts/america-typewritter-light.ttf");
+}
