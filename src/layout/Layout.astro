@@ -1,5 +1,4 @@
 ---
-import Footer from "../components/Footer/Footer.astro";
 import Header from "../components/Header/Header.astro";
 
 type Props = {
@@ -9,62 +8,39 @@ type Props = {
 const { title = "transversais" } = Astro.props;
 ---
 
+<!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <meta name="description" content="Transversais: livro de poesias do autor paraense Adriano Abbade." />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg" href="/icons/favicon.svg" />
+
     <title>{title}</title>
   </head>
   <body>
-    <div class="container">
+    <div class="container mx-auto">
       <Header />
-      <aside title="barra de navegação lateral esquerda" class="left-sidebar"></aside>
       <main>
         <slot />
       </main>
-      <aside title="barra de navegação lateral direita" class="right-sidebar"></aside>
-      <Footer />
+      <footer></footer>
     </div>
   </body>
 </html>
 
 <style is:global>
-  * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  @font-face {
+    font-family: ATW-Regular;
+    src: url("/fonts/america-typewritter-regular.woff") format("woff");
   }
 
-  html,
+  @font-face {
+    font-family: ATW-Light;
+    src: url("/fonts/american-typewritter-light.woff") format("woff");
+  }
+
   body {
-    color: #524c4c;
-    background: #ffffff;
-  }
-
-  a {
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
-  }
-
-  main {
-    grid-row: 2;
-    display: grid;
-    gap: 3rem;
-  }
-
-  .left-sidebar,
-  .right-sidebar {
-    display: none;
-  }
-
-  .container {
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    min-width: 100vw;
-    height: 100vh;
+    @apply bg-neutral-200;
   }
 </style>
