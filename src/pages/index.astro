@@ -1,28 +1,42 @@
 ---
 import Layout from "../layout/Layout.astro";
-import Cover from "../components/Cover.astro";
-import Sponsorship from "../components/Sponsorship.astro";
+import { summary } from "../utils/summary";
 ---
 
 <Layout>
-  <section>
-    <p title="sobre a obra">
-      Obra premiada no concurso literário “Bruno de Menezes”, vinculado à programação oficial da I Bienal de Artes de Belém – Afirmação de Direitos –
-      Ano 2022.
-    </p>
-  </section>
-  <Cover />
-  <p title="dedicatória" class="dedication">à Cintia dedico este livro para Zélia e Guido</p>
-  <Sponsorship />
+  <main>
+    <h2>Sumário</h2>
+    {
+      summary.map(({ chapter, poems }) => {
+        return (
+          <>
+            <h3>{chapter}</h3>
+            <ul>
+              {poems.map(({ title }) => {
+                return <li>{title}</li>;
+              })}
+            </ul>
+          </>
+        );
+      })
+    }
+  </main>
 </Layout>
 
 <style>
-  p {
-    padding: 1rem;
-    font-size: 1.5rem;
+  main {
+    @apply container mx-auto pt-5;
+  }
+  main h2 {
+    font-family: ATW-Light;
+    @apply p-2 text-3xl sm:text-5xl font-semibold mb-2 sm:mb-5;
   }
 
-  .dedication {
-    width: 20rem;
+  main h3 {
+    @apply p-2 pl-4 sm:pl-16 text-xl sm:text-4xl mb-2 sm:mb-5;
+  }
+
+  main ul {
+    @apply p-2 pl-16 sm:pl-24 text-lg sm:text-xl mb-5;
   }
 </style>
