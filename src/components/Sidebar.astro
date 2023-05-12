@@ -1,0 +1,48 @@
+---
+import { summary } from "../utils/summary";
+---
+
+<aside>
+  <h2>Sumário</h2>
+  <ul>
+    {
+      summary.map(({ chapter, poems }) => {
+        return (
+          <div>
+            <h3 class="chapter_title">{chapter}</h3>
+            {poems.sort().map(({ slug, title }) => {
+              return (
+                <li class="poems-title">
+                  <a href={slug}>{title}</a>
+                </li>
+              );
+            })}
+          </div>
+        );
+      })
+    }
+  </ul>
+</aside>
+
+<style>
+  aside {
+    @apply row-start-2 row-span-full col-span-2 overflow-auto overscroll-contain;
+    @apply border-r border-r-stone-600;
+  }
+
+  aside h2 {
+    @apply text-2xl text-center p-3 font-bold;
+  }
+
+  .chapter_title {
+    @apply text-center border-b border-t border-stone-700 p-2 font-semibold;
+  }
+
+  .poems-title {
+    @apply text-sm pt-1 pl-4 hover:text-slate-500;
+  }
+
+  .poems-title:last-child {
+    @apply mb-8;
+  }
+</style>
