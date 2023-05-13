@@ -10,7 +10,7 @@ import { summary } from "../utils/summary";
         return (
           <div>
             <h3 class="chapter_title">{chapter}</h3>
-            {poems.sort().map(({ slug, title }) => {
+            {poems.map(({ slug, title }) => {
               return (
                 <li class="poems-title">
                   <a href={slug}>{title}</a>
