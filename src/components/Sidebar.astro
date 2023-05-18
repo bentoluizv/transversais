@@ -10,13 +10,18 @@ import { summary } from "../utils/summary";
         return (
           <div>
             <h3 class="chapter_title">{chapter}</h3>
-            {poems.map(({ slug, title }) => {
-              return (
-                <li class="poems-title">
-                  <a href={slug}>{title}</a>
-                </li>
-              );
-            })}
+            {poems
+              .sort((a, b) => a.number - b.number)
+              .map(({ number, slug, title }) => {
+                return (
+                  <li class="poems-title">
+                    <a href={slug}>
+                      {number}
+                      {title}
+                    </a>
+                  </li>
+                );
+              })}
           </div>
         );
       })
