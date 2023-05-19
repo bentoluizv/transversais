@@ -20,12 +20,20 @@ const { Content } = await entry.render();
 
 <Layout>
   <main>
-    <Content />
+    <div>
+      <Content />
+    </div>
   </main>
 </Layout>
 
 <style>
   main {
-    @apply mt-20 col-start-4 col-span-full row-start-2 row-span-full overflow-y-auto;
+    @apply h-full w-full overflow-y-auto;
+    @apply col-span-full col-start-1;
+    @apply flex flex-col;
+  }
+
+  main div {
+    @apply max-w-4xl mx-auto;
   }
 </style>

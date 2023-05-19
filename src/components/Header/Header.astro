@@ -1,0 +1,18 @@
+---
+import Logo from "./Logo.astro";
+import Summary from "../Summary/Summary.astro";
+---
+
+<header>
+  <Logo />
+  <Summary />
+</header>
+
+<style>
+  header {
+    @apply w-full h-[190px] p-5 max-w-4xl mx-auto;
+    @apply col-span-full col-start-1;
+    @apply border-b border-zinc-400;
+    @apply flex flex-col md:flex-row sm:place-items-center sm:justify-between;
+  }
+</style>

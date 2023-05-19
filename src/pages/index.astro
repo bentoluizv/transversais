@@ -4,68 +4,83 @@ import Layout from "../layout/Layout.astro";
 
 <Layout>
   <main>
-    <section title="sobre o livro">
-      <header class="title-wrapper">
-        <img class="hashtag" src="/icons/hashtag.svg" alt="hashtag" />
-        <h2 class="title">SOBRE O LIVRO</h2>
-      </header>
-      <article>
-        <p>
-          Obra premiada no concurso literário “Bruno de Menezes”, vinculado à programação oficial da I Bienal de Artes de Belém – Afirmação de
-          Direitos – Ano 2022.
-        </p>
-      </article>
-    </section>
-    <img class="cover" src="/images/cover.png" alt="imagem de capa" />
-    <section title="sobre o autor">
-      <header class="title-wrapper">
-        <img class="hashtag" src="/icons/hashtag.svg" alt="hashtag" />
-        <h2 class="title">SOBRE O AUTOR</h2>
-      </header>
-      <article>
-        <p>
-          Adriano Abbade nasceu em Marába (PA), em 1988. É poeta, escritor e jornalista. Tem poemas publicados nas revistas literárias Caliban e
-          Malamargens: Revista de Poesia e Arte Contemporânea. Participou da antologia Parem as Máquinas (Selo Off Flip 2020). transversais é seu
-          livro de estreia. Vive em Belém.
-        </p>
-      </article>
-    </section>
+    <div>
+      <img class="cover" src="/images/cover.png" alt="imagem de capa" />
+      <div class="section_grid">
+        <section id="about_book" title="sobre o livro">
+          <header class="title_wrapper">
+            <img class="hashtag" src="/icons/hashtag.svg" alt="hashtag" />
+            <h2 class="title">SOBRE O LIVRO</h2>
+          </header>
+          <article>
+            <p>
+              Obra premiada no concurso literário “Bruno de Menezes”, vinculado à programação oficial da I Bienal de Artes de Belém – Afirmação de
+              Direitos – Ano 2022.
+            </p>
+          </article>
+        </section>
+        <section id="about_author" title="sobre o autor">
+          <header class="title_wrapper">
+            <img class="hashtag" src="/icons/hashtag.svg" alt="hashtag" />
+            <h2 class="title">SOBRE O AUTOR</h2>
+          </header>
+          <article>
+            <p>
+              Adriano Abbade nasceu em Marába (PA), em 1988. É poeta, escritor e jornalista. Tem poemas publicados nas revistas literárias Caliban e
+              Malamargens: Revista de Poesia e Arte Contemporânea. Participou da antologia Parem as Máquinas (Selo Off Flip 2020). transversais é seu
+              livro de estreia. Vive em Belém.
+            </p>
+          </article>
+        </section>
+      </div>
+    </div>
   </main>
 </Layout>
 
 <style>
   main {
-    @apply col-span-12 row-span-6 col-start-3 row-start-2 overflow-auto;
-    @apply flex flex-col place-items-center p-8;
+    @apply h-full w-full overflow-y-auto;
+    @apply col-span-full col-start-1;
+    @apply flex flex-col;
   }
 
-  main section {
-    @apply w-[800px] mb-14 flex flex-col gap-5;
+  main div {
+    @apply max-w-4xl mx-auto;
   }
 
-  article {
-    @apply flex flex-col place-items-center gap-5;
-  }
-
-  .title-wrapper {
-    @apply flex gap-2 items-center;
-  }
-
-  .hashtag {
-    @apply object-cover h-[50px];
-  }
-  .title {
-    @apply flex gap-1 h-fit;
-    @apply text-xl font-bold;
+  section {
+    @apply p-2;
   }
 
   .cover {
-    @apply h-[550px] p-1 mb-5 sm:w-2/3 w-full bg-slate-200;
-    @apply border-0 border-slate-950;
-    @apply object-cover rounded-sm shadow-sm shadow-slate-100 brightness-125;
+    @apply object-cover drop-shadow-2xl lg:rounded row-span-2 lg:p-5 h-[350px] w-screen;
   }
 
-  p {
-    @apply text-justify max-w-[550px];
+  .section_grid {
+    @apply grid grid-cols-2 grid-rows-2;
+  }
+
+  #about_book {
+    @apply col-span-2 w-full;
+  }
+
+  section {
+    @apply mx-auto flex flex-col gap-5 p-5 mb-5;
+  }
+
+  section article p {
+    @apply text-xl;
+  }
+
+  .title_wrapper {
+    @apply flex place-content-start place-items-center;
+  }
+
+  .hashtag {
+    @apply h-12 w-12 object-cover;
+  }
+
+  .title {
+    @apply text-3xl font-bold;
   }
 </style>

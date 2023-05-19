@@ -31,5 +31,6 @@ export const summary = bookData.reduce((summary: PoemsByChapter, { slug, data })
     const { title, number } = data;
     exists.poems.push({ number, title, slug });
   }
+
   return summary;
 }, []);

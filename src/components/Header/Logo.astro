@@ -1,0 +1,24 @@
+<div>
+  <h1>transversais</h1>
+  <p>adriano abbade</p>
+</div>
+
+<style>
+  @font-face {
+    font-family: "ATWR";
+    src: url("/fonts/america-typewritter-regular.woff") format("woff");
+  }
+
+  div {
+    @apply p-4 flex flex-col sm:flex-row sm:gap-5 sm:place-items-end items-center justify-center;
+  }
+
+  div h1 {
+    font-family: "ATWR";
+    @apply font-semibold text-5xl;
+  }
+
+  div p {
+    @apply font-thin text-xl mt-[-0.3rem] whitespace-nowrap;
+  }
+</style>

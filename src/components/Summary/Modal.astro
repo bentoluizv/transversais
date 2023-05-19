@@ -1,0 +1,65 @@
+---
+import { summary } from "../../utils/summary";
+---
+
+<dialog id="summary">
+  <div>
+    <h2>Sumário</h2>
+    {
+      summary.map(({ chapter, poems }) => {
+        return (
+          <div class="poem_list">
+            <h3>{chapter}</h3>
+            <ul>
+              {poems
+                .sort((a, b) => a.number - b.number)
+                .map((poem) => {
+                  return (
+                    <li>
+                      <a class="poem">
+                        {poem.number} - {poem.title}
+                      </a>
+                    </li>
+                  );
+                })}
+            </ul>
+          </div>
+        );
+      })
+    }
+    <button id="close_btn">fechar</button>
+  </div>
+</dialog>
+
+<style>
+  dialog {
+    @apply m-8 mt-4 h-screen w-80 border-2 border-slate-950 rounded overflow-y-auto;
+  }
+
+  dialog::backdrop {
+    @apply backdrop-blur-sm;
+  }
+
+  dialog div {
+    @apply flex flex-col;
+  }
+
+  dialog div h2 {
+    @apply text-2xl text-center p-2 mb-2 border-b-2 border-gray-950;
+  }
+
+  .poem_list {
+    @apply p-2 border-b-2 border-gray-950 mb-6;
+  }
+  .poem_list h3 {
+    @apply text-lg pb-2;
+  }
+
+  .poem_list ul {
+    @apply ml-2 pl-3;
+  }
+
+  .poem_list ul:last-child {
+    @apply mb-6;
+  }
+</style>

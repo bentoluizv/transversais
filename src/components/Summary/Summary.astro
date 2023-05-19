@@ -1,0 +1,44 @@
+---
+import Modal from "./Modal.astro";
+---
+
+<nav>
+  <Modal />
+  <menu>
+    <button id="summary_btn">sumário</button>
+  </menu>
+</nav>
+
+<style>
+  nav {
+    @apply flex place-content-center place-items-start;
+  }
+
+  menu button {
+    @apply p-2 w-60 border-violet-800 bg-violet-500 rounded text-neutral-100;
+  }
+</style>
+
+<script>
+  const summaryButton = document.getElementById("summary_btn");
+  const summaryHtmlElement = document.getElementById("summary");
+  const closeSummaryButton = document.getElementById("close_btn");
+
+  if (!summaryButton) throw new Error("Summary button not found!");
+  if (!summaryHtmlElement) throw new Error("Summary modal not found!");
+  if (!closeSummaryButton) throw new Error("Summary close button not found!");
+  if (!(summaryHtmlElement instanceof HTMLDialogElement)) throw new Error("Element must be a <dialog>");
+
+  summaryButton.addEventListener("click", () => {
+    summaryHtmlElement.showModal();
+    summaryHtmlElement.scrollTop = 0;
+  });
+
+  closeSummaryButton.addEventListener("click", () => {
+    summaryHtmlElement.close();
+  });
+
+  window.addEventListener("click", (event) => {
+    if (event.target && event.target === summaryHtmlElement) summaryHtmlElement.close();
+  });
+</script>
