@@ -1,0 +1,22 @@
+---
+import Section from "../../layout/Section.astro";
+---
+
+<Section title="sobre o autor" style="col-start-2 max-h-[550px] place-items-center">
+  <img src="/images/autor.webp" alt="foto do autor" />
+  <p>
+    Adriano Abbade nasceu em Marabá (PA), em 1988. É poeta, escritor e jornalista. Tem poemas publicados nas revistas literárias Caliban e
+    Malamargens: Revista de Poesia e Arte Contemporânea. Participou da antologia Parem as Máquinas (Selo Off Flip 2020). <strong>transversais</strong>
+    é seu livro de estreia. Vive em Belém.
+  </p>
+</Section>
+
+<style>
+  img {
+    @apply w-52 h-52 rounded-full mx-auto mt-2 brightness-75 mb-5 shadow-lg;
+  }
+
+  p strong {
+    @apply font-bold;
+  }
+</style>

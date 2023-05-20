@@ -1,21 +1,16 @@
 ---
 import Modal from "./Modal.astro";
+import SummaryButton from "./SummaryButton.astro";
 ---
 
 <nav>
   <Modal />
-  <menu>
-    <button id="summary_btn">sumário</button>
-  </menu>
+  <SummaryButton />
 </nav>
 
 <style>
   nav {
     @apply flex place-content-center place-items-start;
-  }
-
-  menu button {
-    @apply p-2 w-60 border-violet-800 bg-violet-500 rounded text-neutral-100;
   }
 </style>
 

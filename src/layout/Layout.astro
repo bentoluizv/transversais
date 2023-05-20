@@ -36,11 +36,11 @@ const { title = "transversais" } = Astro.props;
     }
 
     .content_wrapper {
-      @apply grid grid-cols-12 w-full h-full;
+      @apply grid grid-cols-12 w-full h-full overflow-y-auto overflow-x-hidden place-content-start;
     }
 
     ::-webkit-scrollbar {
-      @apply w-1.5;
+      @apply w-2;
     }
 
     /* Define the background color of the track */

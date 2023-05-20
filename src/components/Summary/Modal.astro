@@ -33,7 +33,7 @@ import { summary } from "../../utils/summary";
 
 <style>
   dialog {
-    @apply m-8 mt-4 h-screen w-80 border-2 border-slate-950 rounded overflow-y-auto;
+    @apply mx-auto lg:ml-56 mt-4 h-screen w-80 lg:w-96 border-2 border-slate-950 rounded overflow-y-auto;
   }
 
   dialog::backdrop {
@@ -45,14 +45,14 @@ import { summary } from "../../utils/summary";
   }
 
   dialog div h2 {
-    @apply text-2xl text-center p-2 mb-2 border-b-2 border-gray-950;
+    @apply text-2xl lg:text-3xl text-center p-2 mb-2 border-b-2 border-gray-950;
   }
 
   .poem_list {
     @apply p-2 border-b-2 border-gray-950 mb-6;
   }
   .poem_list h3 {
-    @apply text-lg pb-2;
+    @apply text-xl lg:text-2xl pb-2;
   }
 
   .poem_list ul {
@@ -61,5 +61,13 @@ import { summary } from "../../utils/summary";
 
   .poem_list ul:last-child {
     @apply mb-6;
+  }
+
+  .poem {
+    @apply lg:text-xl;
+  }
+
+  #close_btn {
+    @apply p-2 w-60 border-violet-800 bg-violet-500 rounded text-neutral-100 mx-auto;
   }
 </style>

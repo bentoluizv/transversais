@@ -1,0 +1,32 @@
+---
+type Props = {
+  title: string;
+  style: string;
+};
+
+const { title, style } = Astro.props;
+---
+
+<section title={title} class={style}>
+  <article>
+    <slot />
+  </article>
+</section>
+
+<style>
+  section {
+    @apply m-5 p-5 text-neutral-950 max-w-3xl mx-auto md:overflow-y-auto;
+  }
+
+  header {
+    @apply flex place-items-center justify-center;
+  }
+
+  header h2 {
+    @apply text-xl font-bold;
+  }
+
+  article {
+    @apply p-5 text-center text-lg lg:text-xl tracking-wide leading-6 font-light md:flex md:place-items-center md:gap-4;
+  }
+</style>
