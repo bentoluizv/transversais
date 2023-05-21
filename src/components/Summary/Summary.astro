@@ -16,24 +16,24 @@ import SummaryButton from "./SummaryButton.astro";
 
 <script>
   const summaryButton = document.getElementById("summary_btn");
-  const summaryHtmlElement = document.getElementById("summary");
-  const closeSummaryButton = document.getElementById("close_btn");
+  const modal = document.getElementById("summary");
+  const closeButton = document.getElementById("close_btn");
 
   if (!summaryButton) throw new Error("Summary button not found!");
-  if (!summaryHtmlElement) throw new Error("Summary modal not found!");
-  if (!closeSummaryButton) throw new Error("Summary close button not found!");
-  if (!(summaryHtmlElement instanceof HTMLDialogElement)) throw new Error("Element must be a <dialog>");
+  if (!modal) throw new Error("Summary modal not found!");
+  if (!closeButton) throw new Error("Summary close button not found!");
+  if (!(modal instanceof HTMLDialogElement)) throw new Error("Element must be a <dialog>");
 
   summaryButton.addEventListener("click", () => {
-    summaryHtmlElement.showModal();
-    summaryHtmlElement.scrollTop = 0;
+    modal.showModal();
+    modal.scrollTop = 0;
   });
 
-  closeSummaryButton.addEventListener("click", () => {
-    summaryHtmlElement.close();
+  closeButton.addEventListener("click", () => {
+    modal.close();
   });
 
   window.addEventListener("click", (event) => {
-    if (event.target && event.target === summaryHtmlElement) summaryHtmlElement.close();
+    if (event.target && event.target === modal) modal.close();
   });
 </script>

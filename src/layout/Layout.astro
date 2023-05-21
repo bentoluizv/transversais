@@ -31,12 +31,13 @@ const { title = "transversais" } = Astro.props;
     html,
     body {
       font-family: "Fira Sans", sans-serif;
-      @apply bg-gradient-to-tr from-zinc-100 to-zinc-300 text-neutral-700;
+      @apply bg-gradient-to-r from-white to-ecru;
       @apply w-full h-full;
+      @apply text-gray-700;
     }
 
     .content_wrapper {
-      @apply grid grid-cols-12 w-full h-full overflow-y-auto overflow-x-hidden place-content-start;
+      @apply grid grid-cols-12 w-full h-full place-content-start max-w-5xl mx-auto;
     }
 
     ::-webkit-scrollbar {
@@ -45,12 +46,12 @@ const { title = "transversais" } = Astro.props;
 
     /* Define the background color of the track */
     ::-webkit-scrollbar-track {
-      @apply bg-zinc-950;
+      @apply bg-gray-300;
     }
 
     /* Define the color and style of the thumb */
     ::-webkit-scrollbar-thumb {
-      @apply bg-violet-800;
+      @apply bg-zinc-950;
     }
   </style>
 </html>
